@@ -35,6 +35,23 @@ A standalone Python executable that generates a digital rain animation followed 
    pip install pyinstaller
    ```
 
+## 🎮 Usage
+
+### Run from Source
+```bash
+python matrix_boot.py
+```
+
+### Compile to .exe (Standalone)
+
+To build a single-file executable that runs without Python installed:
+
+```bash
+pyinstaller --onefile --clean --name "MatrixBoot" matrix_boot.py
+```
+
+The executable will appear in the `dist/` folder.
+
 ## 🔨 Building the Executable
 
 Once PyInstaller is installed, you can create a standalone `.exe` file:
@@ -49,27 +66,23 @@ This will generate a single executable file in the `dist/` folder that can be ru
 
 *   `--onefile`: Bundles everything into a single executable
 *   `--windowed`: Hides the console window on startup
+*   `--clean`: Removes temporary build files before compilation
+*   `--name "MatrixBoot"`: Sets the output executable name
 *   `-i icon.ico`: Add a custom icon to the executable (optional)
 *   `--distpath ./output`: Specify custom output directory
 
-## 🎮 Usage
+## 📂 Configuration
 
-### Running the Python Script
-```bash
-python boot_sequence.py
-```
+To run this script on Windows startup:
 
-### Running the Compiled Executable
-Simply double-click the `.exe` file in the `dist/` folder or run from the command line:
-```bash
-dist/boot_sequence.exe
-```
+1. Press `Win + R` and type `shell:startup`
+2. Place a shortcut to `MatrixBoot.exe` in this folder
 
 ## 📋 Requirements
 
-Create a `requirements.txt` file with:
+See `requirements.txt` for dependencies:
 ```
-pyinstaller>=5.0.0
+pyinstaller
 ```
 
 ## 📝 Notes
@@ -80,8 +93,39 @@ pyinstaller>=5.0.0
 
 ## 📄 License
 
-[Add your license here]
+MIT License
 
 ## 👤 Author
 
 TECHaxper
+
+## 🚀 Deployment Protocol
+
+### Initialization Sequence
+
+Open your terminal in the folder where you saved these files and run these commands in order:
+
+#### 1. Initialize Git
+```bash
+git init
+```
+
+#### 2. Stage Files
+```bash
+git add .
+```
+
+#### 3. Commit Artifacts
+```bash
+git commit -m "Initial commit: Matrix Boot Sequence v1.0"
+```
+
+#### 4. Link & Push
+
+Go to [GitHub.com](https://github.com), create a new repository, copy the URL, and run:
+
+```bash
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+git push -u origin main
+```
