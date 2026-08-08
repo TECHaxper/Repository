@@ -1,0 +1,15 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# PyInstaller artifacts (Do not commit these)
+build/
+dist/
+*.spec
+
+# VS Code settings
+.vscode/
+
+# Virtual environments
+venv/
+env/
